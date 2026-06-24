@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Learning Journal - Abulele{% endblock %}
+{% block content %}
+<section class="page">
+  <p class="home-eyebrow">Learning journal</p>
+  <h1 class="home-h1">Notes on building, Python, and the path from Cape Town to Finland.</h1>
+  <div class="glass-blog-grid">
+    {% for article in articles %}
+      {% include "components/blog-card.html" %}
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

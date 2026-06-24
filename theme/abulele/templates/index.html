@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page">
+  <div class="hero-cinematic">
+    <div class="hero-cinematic-inner">
+      <p class="hero-cinematic-eyebrow">Sport science to software</p>
+      <h1 class="hero-cinematic-headline">Hi, I'm Abulele.</h1>
+      <p class="hero-cinematic-sub">I am learning Python, building practical tools, and documenting the path from Cape Town toward a future in tech.</p>
+      <div class="hero-cinematic-cta">
+        <a href="#current-building" class="neon-btn neon-btn-solid">See projects</a>
+        <a href="{{ SITEURL }}/blog.html" class="neon-btn neon-btn-default">Read journal</a>
+      </div>
+    </div>
+  </div>
+
+  <p id="current-building" class="home-section-label">Currently building</p>
+  <div class="home-grid">
+    <a href="{{ SITEURL }}/project-journey-waypoint.html" class="home-card">
+      <p class="home-card-label">in progress</p>
+      <h2 class="home-card-title">Waypoint</h2>
+      <p class="home-card-desc">A docs-first development tool for thinking through architecture before writing code.</p>
+    </a>
+    <a href="{{ SITEURL }}/from-the-pitch-to-the-keyboard.html" class="home-card">
+      <p class="home-card-label">in progress</p>
+      <h2 class="home-card-title">Productivity app</h2>
+      <p class="home-card-desc">A Python CLI for tracking study and coding sessions while learning user input and data handling.</p>
+    </a>
+    <a href="{{ SITEURL }}/building-this-portfolio-while-learning.html" class="home-card">
+      <p class="home-card-label">shipping</p>
+      <h2 class="home-card-title">This portfolio</h2>
+      <p class="home-card-desc">A Pelican static site, built with Markdown, vanilla CSS, and a habit of learning in public.</p>
+    </a>
+  </div>
+
+  <div class="home-divider"></div>
+  <p class="home-section-label">From the learning journal</p>
+  <div class="home-post-list">
+    {% for article in articles[:3] %}
+      <a href="{{ SITEURL }}/{{ article.url }}" class="home-post-item">
+        <time class="home-post-date" datetime="{{ article.date.isoformat() }}">{{ article.date|strftime('%d %b') }}</time>
+        <span class="home-post-title">{{ article.title }}</span>
+        <span class="home-post-arrow">Read</span>
+      </a>
+    {% endfor %}
+  </div>
+  <a href="{{ SITEURL }}/blog.html" class="neon-btn neon-btn-default">All posts</a>
+</section>
+{% endblock %}

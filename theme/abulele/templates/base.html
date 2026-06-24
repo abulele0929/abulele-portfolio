@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Abulele{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ SITEURL }}/theme/css/style.css">
+  {% block head %}{% endblock %}
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <div class="floating-shapes" aria-hidden="true">
+    <span class="shape shape-1"></span>
+    <span class="shape shape-2"></span>
+    <span class="shape shape-3"></span>
+    <span class="shape shape-4"></span>
+    <span class="shape shape-5"></span>
+  </div>
+
+  <nav class="tubelight-nav" aria-label="Primary navigation">
+    <a href="{{ SITEURL }}/" class="tubelight-logo">abulele.</a>
+    <span class="tubelight-divider" aria-hidden="true"></span>
+    <a href="{{ SITEURL }}/" class="tubelight-item" data-nav-path="/">Home</a>
+    <a href="{{ SITEURL }}/pages/about.html" class="tubelight-item" data-nav-path="/pages/about.html">About</a>
+    <a href="{{ SITEURL }}/blog.html" class="tubelight-item" data-nav-path="/blog.html">Blog</a>
+    <a href="{{ SITEURL }}/pages/contact.html" class="tubelight-item" data-nav-path="/pages/contact.html">Contact</a>
+    <button id="dark-toggle" class="tubelight-item theme-toggle" type="button" aria-label="Toggle dark mode">Dark</button>
+  </nav>
+  <div class="nav-section-divider" aria-hidden="true"></div>
+
+  <main id="main-content">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="{{ SITEURL }}/" class="footer-logo">Abulele</a>
+        <p class="footer-tagline">Sport science student, Python builder, and learner in public. Built while learning from Cape Town to Finland.</p>
+      </div>
+      <div class="footer-links">
+        <p class="footer-links-label">Elsewhere</p>
+        <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+        <a href="mailto:your@email.com">Email</a>
+      </div>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">Copyright {{ articles[0].date.year if articles else 2026 }} Abulele</p>
+      <div class="footer-social">
+        <a href="{{ SITEURL }}/blog.html">Journal</a>
+        <a href="{{ SITEURL }}/pages/contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top-btn" type="button" aria-label="Scroll to top">Top</button>
+  <script src="{{ SITEURL }}/theme/js/main.js"></script>
+</body>
+</html>

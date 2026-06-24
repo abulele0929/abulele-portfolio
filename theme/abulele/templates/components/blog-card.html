@@ -1,0 +1,20 @@
+<a href="{{ SITEURL }}/{{ article.url }}" class="glass-blog-card">
+  <div class="glass-blog-image" aria-hidden="true">
+    <span>{{ article.category|string|first|upper }}</span>
+    <div class="glass-blog-overlay">
+      <span class="glass-blog-cta">Read post</span>
+    </div>
+  </div>
+  <div class="glass-blog-body">
+    <div class="glass-blog-meta">
+      <div class="glass-blog-author">
+        <span class="glass-blog-avatar">A</span>
+        <span class="glass-blog-author-name">Abulele</span>
+      </div>
+      <time class="glass-blog-date" datetime="{{ article.date.isoformat() }}">{{ article.date|strftime('%d %b %Y') }}</time>
+    </div>
+    <h2 class="glass-blog-title">{{ article.title }}</h2>
+    <p class="glass-blog-excerpt">{{ article.summary|striptags|truncate(140) }}</p>
+    <span class="glass-blog-readtime">{{ article.category }}</span>
+  </div>
+</a>

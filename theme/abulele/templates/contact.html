@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page">
+  <p class="contact-eyebrow">Contact</p>
+  <h1 class="contact-h2">{{ page.title }}</h1>
+  <p class="contact-lead">I'd love to hear from you, whether it is an opportunity, a collaboration, or a friendly hello.</p>
+
+  <div class="contact-list">
+    <a href="mailto:your-email@example.com" class="contact-item">
+      <span class="contact-platform">Email</span>
+      <span class="contact-handle">your-email@example.com</span>
+      <span class="contact-arrow">Open</span>
+    </a>
+    <a href="https://github.com/yourusername" class="contact-item">
+      <span class="contact-platform">GitHub</span>
+      <span class="contact-handle">github.com/yourusername</span>
+      <span class="contact-arrow">Open</span>
+    </a>
+    <span class="contact-item">
+      <span class="contact-platform">Location</span>
+      <span class="contact-handle">Cape Town, South Africa</span>
+      <span class="contact-arrow">Home</span>
+    </span>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Page not found - Abulele{% endblock %}
+{% block content %}
+<section class="page">
+  <p class="post-eyebrow">404</p>
+  <h1 class="post-h2">Page not found</h1>
+  <p class="home-lead">This page is not available. You can head back home or read the blog.</p>
+  <div class="home-cta-row">
+    <a href="{{ SITEURL }}/" class="neon-btn neon-btn-solid">Home</a>
+    <a href="{{ SITEURL }}/blog.html" class="neon-btn neon-btn-default">Blog</a>
+  </div>
+</section>
+{% endblock %}
