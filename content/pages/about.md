@@ -9,7 +9,7 @@ template: page
   </div>
   <div class="about-hero-image">
     <span class="about-hero-glow" aria-hidden="true"></span>
-    <img src="/theme/images/Profile.jpg" alt="Abulele">
+    <img src="/images/Profile.jpg" alt="Abulele">
   </div>
 </section>
 
@@ -54,7 +54,7 @@ template: page
 <p class="about-section-label">Skills I'm growing</p>
 <div class="home-grid stack-grid">
   <div class="home-card"><h2 class="home-card-title">Python</h2></div>
-  <div class="home-card"><h2 class="home-card-title">Flask</h2></div>
+  <div class="home-card"><h2 class="home-card-title">Flask & Pelican</h2></div>
   <div class="home-card"><h2 class="home-card-title">HTML and CSS</h2></div>
   <div class="home-card"><h2 class="home-card-title">Git</h2></div>
 </div>

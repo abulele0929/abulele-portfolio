@@ -5,6 +5,15 @@
   <h1 class="contact-h2">{{ page.title }}</h1>
   <p class="contact-lead">I'd love to hear from you, whether it is an opportunity, a collaboration, or a friendly hello.</p>
 
+  <form action="https://formspree.io/f/xojojbnr" method="POST" class="contact-form">
+    <input type="text" name="name" placeholder="Your name" required class="contact-form-input">
+    <input type="email" name="email" placeholder="Your email" required class="contact-form-input">
+    <input type="text" name="subject" placeholder="Subject" class="contact-form-input">
+    <textarea name="message" placeholder="Your message" rows="5" required class="contact-form-textarea"></textarea>
+    <button type="submit" class="contact-btn contact-btn-primary">Send Message</button>
+  </form>
+
+  <div class="contact-divider"></div>
   <div class="contact-list">
     <a href="mailto:your-email@example.com" class="contact-item">
       <span class="contact-platform">Email</span>

@@ -114,7 +114,8 @@ a { color: inherit; text-decoration: none; }
 .hero-cinematic { width: 100%; min-height: 85vh; display: flex; align-items: center; justify-content: center; text-align: center; margin: -120px auto 0; padding: 120px 24px 40px; position: relative; left: 50%; transform: translateX(-50%); max-width: 100vw; }
 .hero-cinematic-inner { max-width: 720px; margin: 0 auto; }
 .hero-cinematic-eyebrow { font-family: var(--mono); font-size: 11px; color: var(--eyebrow); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 24px; opacity: 0; animation: heroFadeUp 0.7s ease-out forwards; animation-delay: 0.1s; }
-.hero-cinematic-headline { font-size: clamp(40px, 7vw, 80px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 24px; color: var(--text); opacity: 0; animation: heroFadeUp 0.7s ease-out forwards; animation-delay: 0.4s; }
+.hero-cinematic-headline-wrap { width: 100vw; position: relative; left: 50%; transform: translateX(-50%); display: flex; justify-content: center; }
+.hero-cinematic-headline { font-size: clamp(40px, 7vw, 80px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 24px; color: var(--text); opacity: 0; animation: heroFadeUp 0.7s ease-out forwards; animation-delay: 0.4s; max-width: 1400px; padding: 0 40px; }
 .hero-cinematic-sub { font-size: 17px; color: var(--herosub); line-height: 1.8; max-width: 560px; margin: 0 auto 36px; opacity: 0; animation: heroFadeUp 0.7s ease-out forwards; animation-delay: 0.55s; }
 .hero-cinematic-cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; opacity: 0; animation: heroFadeUp 0.7s ease-out forwards; animation-delay: 0.7s; }
 @keyframes heroFadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
@@ -405,7 +406,7 @@ a { color: inherit; text-decoration: none; }
   .home-post-item { grid-template-columns: 1fr auto; }
   .home-post-date { grid-column: 1 / -1; }
   .hero-cinematic { min-height: 90vh; }
-  .hero-cinematic-headline { font-size: clamp(28px, 8vw, 40px); }
+  .hero-cinematic-headline { font-size: clamp(20px, 8vw, 30px); }
   .hero-cinematic-cta { flex-direction: column; align-items: center; }
   .neon-btn { padding: 16px 24px; }
   .gallery-card { flex: 0 0 240px; }
