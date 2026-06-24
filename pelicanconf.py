@@ -1,6 +1,6 @@
 AUTHOR = 'Abulele'
 SITENAME = 'Abulele'
-SITEURL = ''
+SITEURL = 'https://abulele-portfolio.onrender.com'
 TIMEZONE = 'Africa/Johannesburg'
 DEFAULT_LANG = 'en'
 THEME = 'theme/abulele'
