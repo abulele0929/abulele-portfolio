@@ -306,6 +306,26 @@ a { color: inherit; text-decoration: none; }
 .value-text h3 { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
 .value-text p { font-size: 12px; color: var(--subtle); line-height: 1.6; }
 
+/* -- PROJECTS -- */
+.projects-hero { justify-content: center; text-align: center; }
+.projects-hero .about-lead { margin-left: auto; margin-right: auto; }
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 1000px; width: 100%; margin: 0 auto; }
+.project-card { position: relative; display: flex; flex-direction: column; padding: 28px; border-radius: 20px; background: var(--card); border: 1px solid var(--border2); text-align: left; transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease; }
+.project-card:hover { transform: translateY(-4px); border-color: var(--text); box-shadow: 0 12px 30px rgba(192,98,65,0.08); }
+.project-card .home-card-desc { flex: 1; margin-bottom: 18px; }
+.project-tags { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.project-tags li { font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); padding: 4px 10px; border: 1px solid var(--border); border-radius: 999px; }
+.project-links { display: flex; flex-wrap: wrap; gap: 18px; margin-top: auto; padding-top: 16px; border-top: 1px solid var(--border); }
+.project-link { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); position: relative; transition: color 0.2s ease; }
+.project-link::after { content: "\2192"; margin-left: 6px; transition: transform 0.2s ease; display: inline-block; }
+.project-link:hover { color: var(--text); }
+.project-link:hover::after { transform: translateX(3px); }
+.projects-cta { text-align: center; }
+.projects-cta .about-lead { margin: 0 auto 28px auto; }
+@media (max-width: 640px) {
+  .projects-grid { grid-template-columns: 1fr; }
+}
+
 /* -- CONTACT TYPOGRAPHY -- */
 .contact-eyebrow { font-family: var(--mono); font-size: 10px; color: var(--eyebrow); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 24px; }
 .contact-h2 { font-size: clamp(28px, 5vw, 44px); font-weight: 700; letter-spacing: -0.025em; line-height: 1.1; margin-bottom: 20px; }
