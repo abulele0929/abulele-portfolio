@@ -19,9 +19,18 @@ if (toggleBtn) {
 }
 
 const currentPath = window.location.pathname.replace(/\/index\.html$/, '/') || '/';
-document.querySelectorAll('[data-nav-path]').forEach((link) => {
+const navLinks = Array.from(document.querySelectorAll('[data-nav-path]'));
+const navPaths = navLinks.map((link) => link.getAttribute('data-nav-path'));
+navLinks.forEach((link) => {
   const navPath = link.getAttribute('data-nav-path');
-  if (navPath === currentPath || (navPath === '/blog.html' && currentPath.endsWith('.html') && !currentPath.startsWith('/pages/'))) {
+  const isExact = navPath === currentPath;
+  // Blog articles live at the site root (e.g. /some-post.html); treat any
+  // root-level page that is not a known nav destination as a blog article.
+  const isArticle = navPath === '/blog.html'
+    && currentPath.endsWith('.html')
+    && !currentPath.startsWith('/pages/')
+    && !navPaths.includes(currentPath);
+  if (isExact || isArticle) {
     link.classList.add('active');
     const glow = document.createElement('span');
     glow.className = 'tubelight-glow';

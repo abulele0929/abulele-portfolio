@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}Projects - Abulele{% endblock %}
+{% block description %}Projects I'm building while I learn — Waypoint, a study &amp; coding tracker, this portfolio, and live work from GitHub.{% endblock %}
+{% block content %}
+<section class="page">
+  <div class="about-hero projects-hero">
+    <div class="about-hero-text">
+      <p class="about-eyebrow">Projects</p>
+      <h1 class="about-h2">Things I'm building while I learn.</h1>
+      <p class="about-lead">Every project here started as something I did not know how to do yet. They are works in progress, built in public, and documented in the journal as I go.</p>
+    </div>
+  </div>
+
+  <div class="about-divider"></div>
+
+  <div class="projects-grid">
+    {% for project in FEATURED_PROJECTS %}
+      <article class="project-card">
+        <p class="home-card-label">{{ project.status }}</p>
+        <h2 class="home-card-title">{{ project.name }}</h2>
+        <p class="home-card-desc">{{ project.description }}</p>
+        {% if project.tags %}
+          <ul class="project-tags">
+            {% for tag in project.tags %}<li>{{ tag }}</li>{% endfor %}
+          </ul>
+        {% endif %}
+        {% if project.stars is not none or project.language or project.updated %}
+          <p class="project-meta">
+            {% if project.language %}<span>{{ project.language }}</span>{% endif %}
+            {% if project.stars is not none %}<span>&#9733; {{ project.stars }}</span>{% endif %}
+            {% if project.updated %}<span>Updated {{ project.updated }}</span>{% endif %}
+          </p>
+        {% endif %}
+        <div class="project-links">
+          {% if project.url %}<a href="{{ project.url }}" target="_blank" rel="noopener noreferrer" class="project-link">View source</a>{% endif %}
+          {% if project.live %}<a href="{{ project.live }}" target="_blank" rel="noopener noreferrer" class="project-link">Live site</a>{% endif %}
+          {% if project.journal %}<a href="{{ SITEURL }}{{ project.journal }}" class="project-link">Read the journal</a>{% endif %}
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+
+  {% if GITHUB_REPOS %}
+    <div class="home-divider"></div>
+    <p class="about-section-label">More on GitHub</p>
+    <div class="projects-grid">
+      {% for repo in GITHUB_REPOS %}
+        <a href="{{ repo.url }}" target="_blank" rel="noopener noreferrer" class="project-card repo-card">
+          <h2 class="home-card-title">{{ repo.name }}</h2>
+          <p class="home-card-desc">{{ repo.description }}</p>
+          <p class="project-meta">
+            {% if repo.language %}<span>{{ repo.language }}</span>{% endif %}
+            <span>&#9733; {{ repo.stars }}</span>
+            {% if repo.updated %}<span>Updated {{ repo.updated }}</span>{% endif %}
+          </p>
+          <span class="project-link repo-card-link">View on GitHub</span>
+        </a>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <div class="home-divider"></div>
+  <p class="about-section-label">More is on the way</p>
+  <div class="projects-cta">
+    <p class="about-lead">I ship small and often. Follow along in the journal, or reach out if you want to build something together.</p>
+    <div class="home-cta-row">
+      <a href="{{ SITEURL }}/blog.html" class="neon-btn neon-btn-default">Read journal</a>
+      <a href="{{ SITEURL }}/pages/contact.html" class="neon-btn neon-btn-solid">Get in touch</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

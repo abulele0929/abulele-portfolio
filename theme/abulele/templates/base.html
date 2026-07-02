@@ -4,10 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% block title %}Abulele{% endblock %}</title>
+  <meta name="description" content="{% block description %}{{ SITEDESCRIPTION }}{% endblock %}">
+  <meta name="author" content="{{ AUTHOR }}">
+
+  <meta property="og:site_name" content="{{ SITENAME }}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ self.title()|striptags }}">
+  <meta property="og:description" content="{{ self.description()|striptags }}">
+  <meta property="og:image" content="{{ SITEURL }}/images/abulele-portfolio.png">
+  <meta property="og:url" content="{{ SITEURL }}/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ self.title()|striptags }}">
+  <meta name="twitter:description" content="{{ self.description()|striptags }}">
+  <meta name="twitter:image" content="{{ SITEURL }}/images/abulele-portfolio.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ SITEURL }}/theme/css/style.css">
+  {% if FEED_ALL_ATOM %}<link rel="alternate" type="application/atom+xml" title="{{ SITENAME }} journal" href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}">{% endif %}
   {% block head %}{% endblock %}
 </head>
 <body>
@@ -26,7 +41,7 @@
     <span class="tubelight-divider" aria-hidden="true"></span>
     <a href="{{ SITEURL }}/" class="tubelight-item" data-nav-path="/">Home</a>
     <a href="{{ SITEURL }}/pages/about.html" class="tubelight-item" data-nav-path="/pages/about.html">About</a>
-    <a href="{{ SITEURL }}/pages/projects.html" class="tubelight-item" data-nav-path="/pages/projects.html">Projects</a>
+    <a href="{{ SITEURL }}/projects.html" class="tubelight-item" data-nav-path="/projects.html">Projects</a>
     <a href="{{ SITEURL }}/blog.html" class="tubelight-item" data-nav-path="/blog.html">Blog</a>
     <a href="{{ SITEURL }}/pages/contact.html" class="tubelight-item" data-nav-path="/pages/contact.html">Contact</a>
     <button id="dark-toggle" class="tubelight-item theme-toggle" type="button" aria-label="Toggle dark mode">Dark</button>
@@ -55,8 +70,10 @@
     <div class="footer-bottom">
       <p class="footer-copyright">Copyright {{ articles[0].date.year if articles else 2026 }} Abulele</p>
       <div class="footer-social">
+        <a href="{{ SITEURL }}/projects.html">Projects</a>
         <a href="{{ SITEURL }}/blog.html">Journal</a>
         <a href="{{ SITEURL }}/pages/contact.html">Contact</a>
+        {% if FEED_ALL_ATOM %}<a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}">RSS</a>{% endif %}
       </div>
     </div>
   </footer>

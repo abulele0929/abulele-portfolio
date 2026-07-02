@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block title %}{{ article.title }} - Abulele{% endblock %}
+{% block description %}{{ article.summary|striptags|truncate(160) }}{% endblock %}
 {% block content %}
 <article class="page">
   <header>
